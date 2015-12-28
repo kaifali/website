@@ -19,6 +19,8 @@ defmodule KaifaLi.Router do
     get "/", PageController, :index
 
     resources "/documents", DocumentController
+
+    get "/services/:keyword", ServiceController, :show
   end
 
   # Other scopes may use custom stacks.
