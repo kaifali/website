@@ -9,3 +9,7 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+KaifaLi.Repo.insert!(
+  %KaifaLi.Document{ name: "七牛", keywords: ["qiniu"], url: "http://developer.qiniu.com/" }
+)
