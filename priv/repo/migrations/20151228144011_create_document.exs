@@ -3,9 +3,9 @@ defmodule KaifaLi.Repo.Migrations.CreateDocument do
 
   def change do
     create table(:documents) do
-      add :name, :string
-      add :keywords, {:array, :string}
-      add :url, :string
+      add :name, :string, null: false
+      add :keywords, {:array, :string}, null: false, default: []
+      add :url, :string, null: false
 
       timestamps
     end
