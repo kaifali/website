@@ -9,7 +9,7 @@
 
   <li>
     <strong>Keywords:</strong>
-    <%= @document.keywords %>
+    <%= @document.keywords |> Enum.join(", ") %>
   </li>
 
   <li>

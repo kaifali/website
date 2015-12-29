@@ -14,7 +14,7 @@
 <%= for document <- @documents do %>
     <tr>
       <td><%= document.name %></td>
-      <td><%= document.keywords %></td>
+      <td><%= document.keywords |> Enum.join(", ") %></td>
       <td><%= document.url %></td>
 
       <td class="text-right">
