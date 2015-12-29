@@ -6,10 +6,12 @@ defmodule KaifaLi.Document do
     field :keywords, {:array, :string}
     field :url, :string
 
+    field :keywords_list, :string, virtual: true
+
     timestamps
   end
 
-  @required_fields ~w(name keywords url)
+  @required_fields ~w(name keywords_list url)
   @optional_fields ~w()
 
   @doc """
@@ -22,5 +24,16 @@ defmodule KaifaLi.Document do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> unique_constraint(:name)
+    |> set_keywords
+  end
+
+  defp set_keywords(changeset) do
+    keywords_list = get_change(changeset, :keywords_list)
+
+    if keywords_list do
+      put_change(changeset, :keywords, String.split(keywords_list, ","))
+    else
+      changeset
+    end
   end
 end
