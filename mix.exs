@@ -35,7 +35,8 @@ defmodule KaifaLi.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.3"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:exrm, "~> 1.0.0-rc7"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
