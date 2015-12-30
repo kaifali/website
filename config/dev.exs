@@ -40,3 +40,10 @@ config :kaifa_li, KaifaLi.Repo,
   database: "kaifa_li_dev",
   hostname: "localhost",
   pool_size: 10
+
+# BasicAuth
+config :kaifa_li, :admin_basic_auth, [
+  realm: "Admin Area",
+  username: "admin",
+  password: "secret"
+]

@@ -17,3 +17,10 @@ config :kaifa_li, KaifaLi.Repo,
   database: "kaifa_li_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# BasicAuth
+config :kaifa_li, :admin_basic_auth, [
+  realm: "Admin Area",
+  username: "admin",
+  password: "secret"
+]
