@@ -3,7 +3,7 @@ defmodule KaifaLi.DocumentTest do
 
   alias KaifaLi.Document
 
-  @valid_attrs %{keywords: [], name: "some content", url: "some content"}
+  @valid_attrs %{keywords_list: "foo,bar", name: "some content", url: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

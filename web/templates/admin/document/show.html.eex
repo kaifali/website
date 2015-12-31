@@ -19,5 +19,5 @@
 
 </ul>
 
-<%= link "Edit", to: document_path(@conn, :edit, @document) %>
-<%= link "Back", to: document_path(@conn, :index) %>
+<%= link "Edit", to: admin_document_path(@conn, :edit, @document) %>
+<%= link "Back", to: admin_document_path(@conn, :index) %>

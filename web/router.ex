@@ -25,11 +25,11 @@ defmodule KaifaLi.Router do
     get "/services/:keyword", ServiceController, :show
   end
 
-  scope "/admin", KaifaLi do
+  scope "/admin", as: :admin do
     pipe_through :browser
     pipe_through :admin
 
-    resources "/documents", DocumentController
+    resources "/documents", KaifaLi.Admin.DocumentController
   end
 
   # Other scopes may use custom stacks.

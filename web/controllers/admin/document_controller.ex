@@ -1,4 +1,4 @@
-defmodule KaifaLi.DocumentController do
+defmodule KaifaLi.Admin.DocumentController do
   use KaifaLi.Web, :controller
 
   alias KaifaLi.Document
@@ -22,7 +22,7 @@ defmodule KaifaLi.DocumentController do
       {:ok, _document} ->
         conn
         |> put_flash(:info, "Document created successfully.")
-        |> redirect(to: document_path(conn, :index))
+        |> redirect(to: admin_document_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -47,7 +47,7 @@ defmodule KaifaLi.DocumentController do
       {:ok, document} ->
         conn
         |> put_flash(:info, "Document updated successfully.")
-        |> redirect(to: document_path(conn, :show, document))
+        |> redirect(to: admin_document_path(conn, :show, document))
       {:error, changeset} ->
         render(conn, "edit.html", document: document, changeset: changeset)
     end
@@ -62,6 +62,6 @@ defmodule KaifaLi.DocumentController do
 
     conn
     |> put_flash(:info, "Document deleted successfully.")
-    |> redirect(to: document_path(conn, :index))
+    |> redirect(to: admin_document_path(conn, :index))
   end
 end
