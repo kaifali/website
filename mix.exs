@@ -19,7 +19,7 @@ defmodule KaifaLi.Mixfile do
   def application do
     [mod: {KaifaLi, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :basic_auth]]
   end
 
   # Specifies which paths to compile per environment.

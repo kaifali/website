@@ -17,7 +17,7 @@ defmodule KaifaLi.Admin.DocumentControllerTest do
   test "lists all entries on index" do
     conn = conn()
             |> using_basic_auth(@username, @password)
-            |> get admin_document_path(conn, :index)
+            |> get(admin_document_path(conn, :index))
 
     assert html_response(conn, 200) =~ "Listing documents"
   end
@@ -25,7 +25,7 @@ defmodule KaifaLi.Admin.DocumentControllerTest do
   test "renders form for new resources" do
     conn = conn()
             |> using_basic_auth(@username, @password)
-            |> get admin_document_path(conn, :new)
+            |> get(admin_document_path(conn, :new))
 
     assert html_response(conn, 200) =~ "New document"
   end
@@ -33,7 +33,7 @@ defmodule KaifaLi.Admin.DocumentControllerTest do
   test "creates resource and redirects when data is valid" do
     conn = conn()
             |> using_basic_auth(@username, @password)
-            |> post admin_document_path(conn, :create), document: @valid_attrs
+            |> post(admin_document_path(conn, :create), document: @valid_attrs)
 
     assert redirected_to(conn) == admin_document_path(conn, :index)
   end
@@ -41,7 +41,7 @@ defmodule KaifaLi.Admin.DocumentControllerTest do
   test "does not create resource and renders errors when data is invalid" do
     conn = conn()
             |> using_basic_auth(@username, @password)
-            |> post admin_document_path(conn, :create), document: @invalid_attrs
+            |> post(admin_document_path(conn, :create), document: @invalid_attrs)
 
     assert html_response(conn, 200) =~ "New document"
   end
@@ -51,16 +51,16 @@ defmodule KaifaLi.Admin.DocumentControllerTest do
 
     conn = conn()
             |> using_basic_auth(@username, @password)
-            |> get admin_document_path(conn, :show, document)
+            |> get(admin_document_path(conn, :show, document))
 
     assert html_response(conn, 200) =~ "Show document"
   end
 
   test "renders page not found when id is nonexistent" do
     assert_error_sent 404, fn ->
-      conn = conn()
-              |> using_basic_auth(@username, @password)
-              |> get admin_document_path(conn, :show, -1)
+      conn()
+        |> using_basic_auth(@username, @password)
+        |> get(admin_document_path(conn, :show, -1))
     end
   end
 
@@ -69,7 +69,7 @@ defmodule KaifaLi.Admin.DocumentControllerTest do
 
     conn = conn()
             |> using_basic_auth(@username, @password)
-            |> get admin_document_path(conn, :edit, document)
+            |> get(admin_document_path(conn, :edit, document))
 
     assert html_response(conn, 200) =~ "Edit document"
   end
@@ -79,7 +79,7 @@ defmodule KaifaLi.Admin.DocumentControllerTest do
 
     conn = conn()
             |> using_basic_auth(@username, @password)
-            |> put admin_document_path(conn, :update, document), document: @valid_attrs
+            |> put(admin_document_path(conn, :update, document), document: @valid_attrs)
 
     assert redirected_to(conn) == admin_document_path(conn, :show, document)
   end
@@ -89,7 +89,7 @@ defmodule KaifaLi.Admin.DocumentControllerTest do
 
     conn = conn()
             |> using_basic_auth(@username, @password)
-            |> put admin_document_path(conn, :update, document), document: @invalid_attrs
+            |> put(admin_document_path(conn, :update, document), document: @invalid_attrs)
 
     assert html_response(conn, 200) =~ "Edit document"
   end
@@ -99,7 +99,7 @@ defmodule KaifaLi.Admin.DocumentControllerTest do
 
     conn = conn()
             |> using_basic_auth(@username, @password)
-            |> delete admin_document_path(conn, :delete, document)
+            |> delete(admin_document_path(conn, :delete, document))
 
     assert redirected_to(conn) == admin_document_path(conn, :index)
     refute Repo.get(Document, document.id)
