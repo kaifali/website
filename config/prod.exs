@@ -59,3 +59,8 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"
+
+# http://hashnuke.com/2015/07/19/convenience-hacks-for-using-exrm-with-phoenix-apps.html
+if System.get_env("SERVER") do
+  config :phoenix, :serve_endpoints, true
+end

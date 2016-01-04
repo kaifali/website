@@ -2,8 +2,12 @@ defmodule KaifaLi.Mixfile do
   use Mix.Project
 
   def project do
+    {result, _exit_code} = System.cmd("git", ["rev-parse", "HEAD"])
+    # We'll truncate the commit SHA to 7 chars. Feel free to change
+    git_sha = String.slice(result, 0, 7)
+
     [app: :kaifa_li,
-     version: "0.0.1",
+     version: "0.0.1-#{git_sha}",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
@@ -17,9 +21,12 @@ defmodule KaifaLi.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
+    # TODO: remove `:connection` after postgrex released a new version.
+    # https://github.com/phoenixframework/phoenix/pull/1449#issue-124720012
     [mod: {KaifaLi, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :basic_auth]]
+                    :phoenix_ecto, :postgrex, :basic_auth,
+                    :connection]]
   end
 
   # Specifies which paths to compile per environment.
