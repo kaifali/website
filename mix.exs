@@ -25,8 +25,7 @@ defmodule KaifaLi.Mixfile do
     # https://github.com/phoenixframework/phoenix/pull/1449#issue-124720012
     [mod: {KaifaLi, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :basic_auth,
-                    :connection]]
+                    :phoenix_ecto, :postgrex, :basic_auth, :connection]]
   end
 
   # Specifies which paths to compile per environment.
