@@ -1,0 +1,91 @@
+.home {
+  margin: 0 auto;
+}
+
+.home header {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1.5em 0;
+}
+
+.home header > h1, .home header p {
+  text-align: center;
+}
+
+.home header p {
+  font-style: italic;
+}
+
+.home #service-search-field {
+  display: block;
+  padding: 0.5em 0;
+  margin: 2em 0 2em 0;
+  width: 100%;
+}
+
+.home > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.home > ul > li {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  flex: 0 0 33.33%;
+}
+
+@media (max-width: 420px) {
+  .home > ul > li {
+    flex: 0 0 100%;
+  }
+}
+
+.home > ul > li:nth-of-type(2n+1) {
+  background-color: #fafafa;
+}
+
+.home > ul > li:nth-of-type(2n+2) {
+  background-color: #efefef;
+}
+
+.home > ul > li h3 {
+  font-weight: normal;
+}
+
+.home > ul > li h3 > a {
+  text-decoration: none;
+  color: #0D9BAA;
+}
+
+.home > ul > li h3 > a:hover {
+  color: #7E4734;
+}
+
+.home > ul > li > p {
+  font-weight: lighter;
+  color: #7d7d7d;
+  font-style: italic;
+}
+
+.home > .alfred-workflow {
+  margin: 5em auto 2em auto;
+  text-align: center;
+}
+
+.home > .alfred-workflow > a {
+  margin: 0 auto;
+  padding: 2em 2em;
+  border-radius: 8px;
+  text-decoration: none;
+  background-color: #0D9BAA;
+  color: white;
+}
+
+.home > .alfred-workflow > a:hover {
+  background-color: #0c8a97;
+}
+
