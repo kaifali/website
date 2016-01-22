@@ -2,9 +2,7 @@
   <header>
     <img src="<%= static_path(@conn, "/images/icon.svg") %>" alt="Logo" >
     <h1>开发哩</h1>
-    <p>
-      slogan
-    </p>
+    <p>极速访问各网站的开发文档</p>
   </header>
 
   <datalist class="datalist", id="services-list">
