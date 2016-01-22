@@ -1,36 +1,32 @@
-<div class="jumbotron">
-  <h2>Welcome to Phoenix!</h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
-</div>
+<div class='home'>
+  <header>
+    <img src="<%= static_path(@conn, "/images/icon.svg") %>" alt="Logo" >
+    <h1>开发哩</h1>
+    <p>
+      slogan
+    </p>
+  </header>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="http://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
-  </div>
+  <datalist class="datalist", id="services-list">
+    <%= for {keyword, name} <- document_mappings(@documents) do %>
+      <option value="<%= keyword %>"><%= name %></option>
+    <% end %>
+  </datalist>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
+  <form class="" action="" method="post" id="service-search-form">
+    <input name="service-search-field" id="service-search-field" list="services-list" autofocus="autofocus" spellcheck="false" inputmode="latin" type="search">
+  </form>
+
+  <ul>
+    <%= for document <- @documents do %>
       <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
+        <h3><a href="<%= document.url %>"><%= document.name %></a></h3>
+        <p><%= Enum.join(document.keywords, ",") %></p>
       </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
+    <% end %>
+  </ul>
+
+  <div class="alfred-workflow">
+    <a href="https://selfstore.io/products/489">Alfred Workflow</a>
   </div>
 </div>

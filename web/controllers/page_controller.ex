@@ -1,7 +1,10 @@
 defmodule KaifaLi.PageController do
   use KaifaLi.Web, :controller
 
+  alias KaifaLi.Document
+
   def index(conn, _params) do
-    render conn, "index.html"
+    documents = Repo.all(Document)
+    render conn, "index.html", documents: documents
   end
 end

@@ -57,8 +57,7 @@ exports.config = {
     },
     postcss: {
       processors: [
-        require('autoprefixer')(['last 8 versions']),
-        require('csswring')
+        require('autoprefixer')(['last 8 versions'])
       ]
     }
   },
