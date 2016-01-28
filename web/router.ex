@@ -33,7 +33,9 @@ defmodule KaifaLi.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", KaifaLi do
-  #   pipe_through :api
-  # end
+  scope "/api", KaifaLi do
+    pipe_through :api
+
+    get "/services/:keyword", API.ServiceController, :show
+  end
 end
