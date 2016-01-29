@@ -13,7 +13,7 @@ defmodule KaifaLi.Router do
     plug :accepts, ["json"]
   end
 
-  pipeline :admin do
+  pipeline :authorize do
     plug BasicAuth, Application.get_env(:kaifa_li, :admin_basic_auth)
   end
 
@@ -27,15 +27,15 @@ defmodule KaifaLi.Router do
 
   scope "/admin", as: :admin do
     pipe_through :browser
-    pipe_through :admin
+    pipe_through :authorize
 
     resources "/documents", KaifaLi.Admin.DocumentController
   end
 
   # Other scopes may use custom stacks.
-  scope "/api", KaifaLi do
+  scope "/api", as: :api do
     pipe_through :api
 
-    get "/services/:keyword", API.ServiceController, :show
+    get "/services/:keyword", KaifaLi.API.ServiceController, :show
   end
 end

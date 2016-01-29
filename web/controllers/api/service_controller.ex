@@ -8,6 +8,7 @@ defmodule KaifaLi.API.ServiceController do
           where: fragment("? = ANY (?)", ^keyword, d.keywords)
 
     document = Repo.one!(query)
+
     render conn, "show.json", %{document: document}
   end
 end
