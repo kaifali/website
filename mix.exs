@@ -2,12 +2,8 @@ defmodule KaifaLi.Mixfile do
   use Mix.Project
 
   def project do
-    {result, _exit_code} = System.cmd("git", ["rev-parse", "HEAD"])
-    # We'll truncate the commit SHA to 7 chars. Feel free to change
-    git_sha = String.slice(result, 0, 7)
-
     [app: :kaifa_li,
-     version: "0.0.1-#{git_sha}",
+     version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
