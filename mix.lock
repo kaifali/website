@@ -1,6 +1,7 @@
 %{"basic_auth": {:hex, :basic_auth, "1.0.0"},
   "bbmustache": {:hex, :bbmustache, "1.0.3"},
   "bunt": {:hex, :bunt, "0.1.4"},
+  "bureaucrat": {:hex, :bureaucrat, "0.1.2"},
   "connection": {:hex, :connection, "1.0.2"},
   "cowboy": {:hex, :cowboy, "1.0.4"},
   "cowlib": {:hex, :cowlib, "1.0.2"},

@@ -24,6 +24,8 @@ defmodule KaifaLi.ConnCase do
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
+      import Bureaucrat.Helpers
+
       import KaifaLi.Router.Helpers
 
       # The default endpoint for testing

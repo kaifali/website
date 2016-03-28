@@ -8,6 +8,7 @@ defmodule KaifaLi.API.ServiceControllerTest do
 
     conn = conn()
             |> get(api_service_path(conn, :show, "foo"))
+            |> doc
 
     body = json_response(conn, 200)
     assert body["name"] == document.name

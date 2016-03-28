@@ -44,6 +44,7 @@ defmodule KaifaLi.Mixfile do
      {:cowboy, "~> 1.0"},
      {:exrm, "~> 1.0.0-rc7"},
      {:basic_auth, "~> 1.0.0"},
+     {:bureaucrat, "~> 0.1.2", only: [:test]},
      {:credo, "~> 0.2", only: [:dev, :test]}]
   end
 
