@@ -24,10 +24,10 @@
       </div>
       <div>
         <p><a href="mailto:kaifali@daikeapp.com">联系我</a></p>
-        <p><a href="https://github.com/kaifali/next">源代码</a></p>
+        <p><a href="https://github.com/kaifali/website">源代码</a></p>
         <p><a href="https://github.com/kaifali/cli">命令行工具</a></p>
-        <p><a href="https://github.com/kaifali/next/blob/master/API.md">API 文档</a></p>
-        <p><a href="https://github.com/kaifali/next/issues/new">建议</a></p>
+        <p><a href="https://github.com/kaifali/website/blob/master/API.md">API 文档</a></p>
+        <p><a href="https://github.com/kaifali/website/issues/new">建议</a></p>
       </div>
     </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>")></script>
