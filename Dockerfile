@@ -4,6 +4,9 @@ FROM elixir:1.2.5
 RUN apt-get -y -q install wget
 RUN apt-get -y -q install git
 
+RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
+RUN apt-get -y -q install nodejs
+
 RUN mix local.hex --force
 RUN mix hex.config mirror_url https://cdn.jsdelivr.net/hex
 
@@ -19,8 +22,12 @@ RUN mix deps.get
 
 ADD . $APP_HOME
 
-# RUN mix compile
+RUN npm install -g brunch
+RUN npm install
+RUN brunch build --production
+
 RUN mix deps.compile
-RUN mix release.clean --implode --no-confirm \
-  && mix compile \
-  && mix release
+RUN mix phoenix.digest
+RUN mix compile
+RUN mix release
+
