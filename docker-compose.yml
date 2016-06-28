@@ -1,0 +1,32 @@
+# for persistance of database data
+dbdata:
+  image: "postgres:9.4"
+  volumes:
+    - /var/lib/postgresql
+  command: "true"
+
+# the database image
+db:
+  image: "postgres:9.4"
+  ports:
+    - "5432:5432"
+  environment:
+    POSTGRES_USER: kaifali
+    POSTGRES_PASSWORD: kaifali
+  volumes_from:
+    - dbdata
+
+# the main image, this is the application
+web:
+  build: "."
+  environment:
+    MIX_ENV: "docker"
+    PORT: 4009
+    DATABASE_URL: ecto://kaifali:kaifali@db/kaifali_prod
+    BASIC_AUTH_USERNAME: kaifali
+    BASIC_AUTH_PASSWORD: kaifali
+  command: rel/kaifa_li/bin/kaifa_li foreground
+  ports:
+    - "4009:4009"
+  links:
+    - "db:db"

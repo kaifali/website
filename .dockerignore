@@ -1,0 +1,13 @@
+.git
+elixir_buildpack.config
+docker-compose.yml
+Procfile
+Dockerfile
+
+# Elixir
+deps
+_build
+doc
+rel
+.deliver
+erl_crash.dump
