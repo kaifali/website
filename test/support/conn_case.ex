@@ -34,10 +34,12 @@ defmodule KaifaLi.ConnCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(KaifaLi.Repo)
+
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(KaifaLi.Repo, [])
+      Ecto.Adapters.SQL.Sandbox.mode(KaifaLi.Repo, {:shared, self()})
     end
 
-    :ok
+    {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

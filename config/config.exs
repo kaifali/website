@@ -8,11 +8,12 @@ use Mix.Config
 # Configures the endpoint
 config :kaifa_li, KaifaLi.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
   secret_key_base: "zycYow1DEnv/sb095xJzqty3KWngoUj+gtVu7lyJWzO14s7aLilry1s/Ko4JJuFY",
   render_errors: [accepts: ~w(html json)],
   pubsub: [name: KaifaLi.PubSub,
            adapter: Phoenix.PubSub.PG2]
+
+config :kaifa_li, ecto_repos: [KaifaLi.Repo]
 
 # Configures Elixir's Logger
 config :logger, :console,

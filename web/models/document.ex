@@ -11,20 +11,19 @@ defmodule KaifaLi.Document do
     timestamps
   end
 
-  @required_fields ~w(name keywords_list url)
-  @optional_fields ~w()
-
-  @doc """
-  Creates a changeset based on the `model` and `params`.
-
-  If no params are provided, an invalid changeset is returned
-  with no validation performed.
-  """
-  def changeset(model, params \\ :empty) do
-    model
-    |> cast(params, @required_fields, @optional_fields)
+  def changeset(struct, params \\ %{}) do
+    struct
+    |> cast(params, [:name, :keywords_list, :url])
+    |> validate_required([:name, :keywords_list, :url])
     |> unique_constraint(:name)
     |> set_keywords
+  end
+
+  def fetch_keywords_list(changeset) do
+    keyword = Ecto.Changeset.get_field(changeset, :keywords)
+    if keyword do
+      keyword |> Enum.join(", ")
+    end
   end
 
   defp set_keywords(changeset) do

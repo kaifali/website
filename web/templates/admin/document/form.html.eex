@@ -12,7 +12,7 @@
 
   <div class="form-group">
     <%= label f, :keywords_list, class: "control-label" %>
-    <%= text_input f, :keywords_list, class: "form-control", value: Ecto.Changeset.get_field(@changeset, :keywords) |> Enum.join(", ") %>
+    <%= text_input f, :keywords_list, class: "form-control", value: KaifaLi.Document.fetch_keywords_list(@changeset) %>
   </div>
 
   <div class="form-group">

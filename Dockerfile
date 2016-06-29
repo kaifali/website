@@ -11,6 +11,7 @@ RUN mix local.hex --force
 RUN mix hex.config mirror_url https://cdn.jsdelivr.net/hex
 
 ENV APP_HOME /app
+
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
