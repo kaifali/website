@@ -16,6 +16,6 @@ config :kaifa_li, KaifaLi.Repo,
 
 config :kaifa_li, :admin_basic_auth,
   realm: "Admin Area",
-  username: System.get_env("BASIC_AUTH_USERNAME"),
-  password: System.get_env("BASIC_AUTH_PASSWORD")
+  username: "${BASIC_AUTH_USERNAME}",
+  password: "${BASIC_AUTH_PASSWORD}"
 
