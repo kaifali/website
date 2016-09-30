@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :kaifa_li, KaifaLi.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "kaifa.li", port: 80],
+  url: [host: "kaifa.at", port: 80],
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
