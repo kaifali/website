@@ -5,6 +5,10 @@
 # is restricted to this project.
 use Mix.Config
 
+config :kaifa_li, namespace: KaifaLi
+
+config :kaifa_li, ecto_repos: [KaifaLi.Repo]
+
 # Configures the endpoint
 config :kaifa_li, KaifaLi.Endpoint,
   url: [host: "localhost"],
