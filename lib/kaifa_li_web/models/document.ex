@@ -1,12 +1,12 @@
 defmodule KaifaLi.Document do
-  use KaifaLi.Web, :model
+  use KaifaLiWeb, :model
 
   schema "documents" do
-    field :name, :string
-    field :keywords, {:array, :string}
-    field :url, :string
+    field(:name, :string)
+    field(:keywords, {:array, :string})
+    field(:url, :string)
 
-    field :keywords_list, :string, virtual: true
+    field(:keywords_list, :string, virtual: true)
 
     timestamps
   end

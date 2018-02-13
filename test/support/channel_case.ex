@@ -1,4 +1,4 @@
-defmodule KaifaLi.ChannelCase do
+defmodule KaifaLiWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -26,7 +26,7 @@ defmodule KaifaLi.ChannelCase do
 
 
       # The default endpoint for testing
-      @endpoint KaifaLi.Endpoint
+      @endpoint KaifaLiWeb.Endpoint
     end
   end
 

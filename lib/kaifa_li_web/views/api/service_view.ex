@@ -1,5 +1,5 @@
-defmodule KaifaLi.API.ServiceView do
-  use KaifaLi.Web, :view
+defmodule KaifaLiWeb.API.ServiceView do
+  use KaifaLiWeb, :view
 
   def render("show.json", %{document: document}) do
     %{

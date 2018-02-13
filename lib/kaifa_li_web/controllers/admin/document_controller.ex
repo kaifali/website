@@ -1,9 +1,9 @@
-defmodule KaifaLi.Admin.DocumentController do
-  use KaifaLi.Web, :controller
+defmodule KaifaLiWeb.Admin.DocumentController do
+  use KaifaLiWeb, :controller
 
   alias KaifaLi.Document
 
-  plug :scrub_params, "document" when action in [:create, :update]
+  plug(:scrub_params, "document" when action in [:create, :update])
 
   def index(conn, _params) do
     documents = Repo.all(Document)
@@ -23,6 +23,7 @@ defmodule KaifaLi.Admin.DocumentController do
         conn
         |> put_flash(:info, "Document created successfully.")
         |> redirect(to: admin_document_path(conn, :index))
+
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -48,6 +49,7 @@ defmodule KaifaLi.Admin.DocumentController do
         conn
         |> put_flash(:info, "Document updated successfully.")
         |> redirect(to: admin_document_path(conn, :show, document))
+
       {:error, changeset} ->
         render(conn, "edit.html", document: document, changeset: changeset)
     end

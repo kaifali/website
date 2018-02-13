@@ -25,3 +25,7 @@ erl_crash.dump
 
 # exrm
 /rel
+
+.elixir_ls
+
+.vscode

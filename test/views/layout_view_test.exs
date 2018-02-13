@@ -1,3 +1,3 @@
-defmodule KaifaLi.LayoutViewTest do
-  use KaifaLi.ConnCase, async: true
+defmodule KaifaLiWeb.LayoutViewTest do
+  use KaifaLiWeb.ConnCase, async: true
 end

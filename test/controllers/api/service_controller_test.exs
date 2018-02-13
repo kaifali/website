@@ -1,5 +1,5 @@
-defmodule KaifaLi.API.ServiceControllerTest do
-  use KaifaLi.ConnCase
+defmodule KaifaLiWeb.API.ServiceControllerTest do
+  use KaifaLiWeb.ConnCase
 
   alias KaifaLi.Document
 

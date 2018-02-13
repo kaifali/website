@@ -1,5 +1,5 @@
-defmodule KaifaLi.PageControllerTest do
-  use KaifaLi.ConnCase
+defmodule KaifaLiWeb.PageControllerTest do
+  use KaifaLiWeb.ConnCase
 
   test "GET /" do
     conn = get build_conn(), "/"
