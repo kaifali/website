@@ -13,7 +13,12 @@ config :kaifa_li, KaifaLiWeb.Endpoint,
   cache_static_lookup: false,
   check_origin: false,
   watchers: [
-    node: ["node_modules/brunch/bin/brunch", "watch", "--stdin", cd: Path.expand("../", __DIR__)]
+    node: [
+      "node_modules/.bin/brunch",
+      "watch",
+      "--stdin",
+      cd: Path.expand("../assets", __DIR__)
+    ]
   ]
 
 # Watch static and templates for browser reloading.

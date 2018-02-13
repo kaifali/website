@@ -8,7 +8,7 @@ defmodule KaifaLi.Document do
 
     field(:keywords_list, :string, virtual: true)
 
-    timestamps
+    timestamps()
   end
 
   @required_fields ~w(name keywords_list url)a
