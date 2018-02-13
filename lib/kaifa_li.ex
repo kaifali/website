@@ -8,9 +8,9 @@ defmodule KaifaLi do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(KaifaLi.Endpoint, []),
+      supervisor(KaifaLiWeb.Endpoint, []),
       # Start the Ecto repository
-      worker(KaifaLi.Repo, []),
+      worker(KaifaLi.Repo, [])
       # Here you could define other workers and supervisors as children
       # worker(KaifaLi.Worker, [arg1, arg2, arg3]),
     ]
@@ -24,7 +24,7 @@ defmodule KaifaLi do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    KaifaLi.Endpoint.config_change(changed, removed)
+    KaifaLiWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

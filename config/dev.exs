@@ -6,22 +6,28 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :kaifa_li, KaifaLi.Endpoint,
+config :kaifa_li, KaifaLiWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
   cache_static_lookup: false,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                  cd: Path.expand("../", __DIR__)]]
+  watchers: [
+    node: [
+      "node_modules/.bin/brunch",
+      "watch",
+      "--stdin",
+      cd: Path.expand("../assets", __DIR__)
+    ]
+  ]
 
 # Watch static and templates for browser reloading.
-config :kaifa_li, KaifaLi.Endpoint,
+config :kaifa_li, KaifaLiWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{web/views/.*(ex)$},
-      ~r{web/templates/.*(eex)$}
+      ~r{lib/kaifa_li_web/views/.*(ex)$},
+      ~r{lib/kaife_li_web/templates/.*(eex)$}
     ]
   ]
 
@@ -43,8 +49,7 @@ config :kaifa_li, KaifaLi.Repo,
   pool_size: 10
 
 # BasicAuth
-config :kaifa_li, :admin_basic_auth, [
+config :kaifa_li, :admin_basic_auth,
   realm: "Admin Area",
   username: "admin",
   password: "secret"
-]

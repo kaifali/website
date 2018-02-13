@@ -1,5 +1,5 @@
-defmodule KaifaLi.Admin.DocumentControllerTest do
-  use KaifaLi.ConnCase
+defmodule KaifaLiWeb.Admin.DocumentControllerTest do
+  use KaifaLiWeb.ConnCase
 
   alias KaifaLi.Document
 

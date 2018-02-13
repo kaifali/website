@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :kaifa_li, KaifaLi.Endpoint,
+config :kaifa_li, KaifaLiWeb.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -19,8 +19,7 @@ config :kaifa_li, KaifaLi.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 # BasicAuth
-config :kaifa_li, :admin_basic_auth, [
+config :kaifa_li, :admin_basic_auth,
   realm: "Admin Area",
   username: "admin",
   password: "secret"
-]

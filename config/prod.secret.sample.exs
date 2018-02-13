@@ -3,8 +3,7 @@ use Mix.Config
 # In this file, we keep production configuration that
 # you likely want to automate and keep it away from
 # your version control system.
-config :kaifa_li, KaifaLi.Endpoint,
-  secret_key_base: "sample"
+config :kaifa_li, KaifaLiWeb.Endpoint, secret_key_base: "sample"
 
 # Configure your database
 config :kaifa_li, KaifaLi.Repo,
@@ -15,8 +14,7 @@ config :kaifa_li, KaifaLi.Repo,
   pool_size: 20
 
 # BasicAuth
-config :kaifa_li, :admin_basic_auth, [
+config :kaifa_li, :admin_basic_auth,
   realm: "Admin Area",
   username: "sample",
   password: "sample"
-]

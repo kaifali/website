@@ -1,4 +1,4 @@
-defmodule KaifaLi.ConnCase do
+defmodule KaifaLiWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -26,10 +26,10 @@ defmodule KaifaLi.ConnCase do
 
       import Bureaucrat.Helpers
 
-      import KaifaLi.Router.Helpers
+      import KaifaLiWeb.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint KaifaLi.Endpoint
+      @endpoint KaifaLiWeb.Endpoint
     end
   end
 
