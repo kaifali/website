@@ -1,4 +1,6 @@
 # KaifaLi
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkaifali%2Fwebsite.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkaifali%2Fwebsite?ref=badge_shield)
+
 
 To start your Phoenix app:
 
@@ -17,3 +19,7 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: http://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkaifali%2Fwebsite.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkaifali%2Fwebsite?ref=badge_large)
